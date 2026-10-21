@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f8f3e9">
+<meta name="description" content="Celebrate the wedding of Tanya & Saatvik — four beautiful celebrations, one forever.">
+<title>Tanya & Saatvik — Our Wedding</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#fbf7ef;--cream:#f2e8d8;--ink:#34251d;--muted:#806d5b;--gold:#a67c45;--gold2:#d5b681;--line:#dfd1bb;--wine:#6e2934}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif}a{color:inherit}button,input,select,textarea{font:inherit}.serif,h1,h2,h3,.brand,.event-date{font-family:"Cormorant Garamond",serif}button{cursor:pointer}
+.topbar{position:sticky;top:0;z-index:20;background:#fbf7eff0;backdrop-filter:blur(12px);border-bottom:1px solid #dfd1bb99}.nav{max-width:1180px;margin:auto;padding:13px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-size:25px;letter-spacing:.13em;color:var(--gold);white-space:nowrap}.brand small{font-size:12px;display:block;text-align:center;letter-spacing:.24em}.navlinks{display:flex;gap:23px;align-items:center;font-size:11px;letter-spacing:.12em;text-transform:uppercase}.navlinks a{text-decoration:none}.navlinks a:hover{color:var(--gold)}.menu{display:none;border:1px solid var(--line);background:transparent;padding:8px 10px}
+.hero{min-height:640px;display:grid;grid-template-columns:1.05fr .95fr;max-width:1380px;margin:auto;position:relative;overflow:hidden}.hero-copy{padding:100px 7vw 85px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;position:relative}.eyebrow{font-size:10px;letter-spacing:.27em;text-transform:uppercase;color:var(--gold);font-weight:600}.hero h1{font-size:clamp(62px,8vw,116px);line-height:.82;font-weight:400;letter-spacing:-.035em;margin:28px 0}.hero h1 span{display:block;font-style:italic;color:var(--gold)}.hero p{color:var(--muted);line-height:1.8;max-width:370px;font-size:13px}.hero-date{margin-top:22px;padding:14px 0;border-top:1px solid var(--gold2);border-bottom:1px solid var(--gold2);letter-spacing:.18em;font-size:11px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{border:1px solid var(--gold);background:var(--gold);color:white;padding:13px 20px;text-decoration:none;text-transform:uppercase;letter-spacing:.13em;font-size:10px;display:inline-flex;align-items:center;justify-content:center;transition:.2s}.btn:hover{background:var(--ink);border-color:var(--ink)}.btn.outline{background:transparent;color:var(--ink)}.hero-art{position:relative;min-height:560px;background:linear-gradient(145deg,#d9c2a1,#f4e9d9 46%,#9b795c);overflow:hidden}.hero-art:before{content:"";position:absolute;inset:20px;border:1px solid #fff8e4a6;z-index:2;pointer-events:none}.hero-art img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;filter:saturate(.76)}.art-caption{position:absolute;z-index:3;bottom:48px;left:36px;color:white;text-shadow:0 2px 18px #33251c;letter-spacing:.2em;font-size:10px;text-transform:uppercase}.ornament{position:absolute;width:210px;height:210px;border:1px solid #b58c54;border-radius:50%;opacity:.45;pointer-events:none}.ornament:after{content:"";position:absolute;inset:12px;border:1px solid #b58c54;border-radius:50%}.hero-copy .ornament{left:-130px;bottom:-90px}
+section{padding:82px 22px}.section-inner{max-width:1120px;margin:auto}.center{text-align:center}.section-kicker{font-size:10px;letter-spacing:.27em;text-transform:uppercase;color:var(--gold);font-weight:600}.section-title{font-size:clamp(38px,5vw,62px);font-weight:400;margin:12px 0 12px;line-height:1}.section-intro{max-width:570px;margin:0 auto;color:var(--muted);font-size:13px;line-height:1.8}
+.countdown{background:#eee2cf;border-block:1px solid var(--line);padding:34px 22px}.count-wrap{display:flex;justify-content:center;align-items:center;gap:clamp(18px,5vw,68px);flex-wrap:wrap}.count-label{text-transform:uppercase;letter-spacing:.2em;font-size:10px;color:var(--muted);max-width:140px;line-height:1.7}.count-unit{text-align:center;min-width:54px}.count-unit strong{font:400 40px "Cormorant Garamond",serif;color:var(--wine);display:block}.count-unit span{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+.events{background:#fffdf8}.events-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:42px}.event-card{background:var(--paper);border:1px solid var(--line);display:flex;flex-direction:column;min-width:0}.event-img{height:190px;overflow:hidden;background:#e8d8c3}.event-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}.event-card:hover .event-img img{transform:scale(1.04)}.event-content{padding:22px 18px 20px;display:flex;flex-direction:column;flex:1}.event-date{font-size:29px;color:var(--gold);line-height:1.05}.event-date small{font:500 10px "DM Sans",sans-serif;letter-spacing:.16em;text-transform:uppercase;display:block;margin-top:5px;color:var(--muted)}.event-card h3{font-size:27px;font-weight:500;line-height:1.02;margin:20px 0 13px}.event-venue{font-size:11px;line-height:1.8;color:var(--muted);margin-top:auto}.event-venue strong{display:block;color:var(--ink);font-weight:600}.event-note{font-size:11px;color:var(--muted);line-height:1.7;margin:14px 0 0}.venue-icon{color:var(--gold);margin-right:5px}
+.story{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}.story-image{height:470px;position:relative;background:#dfcbb0}.story-image img{width:100%;height:100%;object-fit:cover}.story-image:after{content:"";position:absolute;inset:14px;border:1px solid #fff9}.story-copy .section-title{margin-bottom:22px}.story-copy p{font-size:13px;line-height:2;color:var(--muted)}.monogram{font-family:"Cormorant Garamond",serif;font-size:43px;color:var(--gold);border:1px solid var(--gold2);width:74px;height:74px;border-radius:50%;display:grid;place-items:center;margin-bottom:24px}
+.gallery{background:#eee2cf}.gallery-grid{display:grid;grid-template-columns:1.15fr .85fr .85fr;grid-template-rows:180px 180px;gap:12px;margin-top:36px}.gallery-grid img{width:100%;height:100%;object-fit:cover}.gallery-grid img:first-child{grid-row:span 2}
+.rsvp{background:#402b25;color:var(--paper);position:relative;overflow:hidden}.rsvp:before,.rsvp:after{content:"✦";position:absolute;font-size:180px;color:#d5b68113}.rsvp:before{top:-45px;left:5%}.rsvp:after{bottom:-80px;right:5%}.rsvp .section-kicker{color:var(--gold2)}.rsvp .section-intro{color:#d9c9b5}.rsvp-form{max-width:720px;margin:35px auto 0;position:relative;z-index:1}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{display:flex;flex-direction:column;gap:8px}.field.full{grid-column:1/-1}.field label{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#e5d5c1}.field input,.field select,.field textarea{background:#ffffff0b;border:1px solid #b89a78;color:white;padding:13px;outline:none;border-radius:0}.field select option{color:#34251d}.field textarea{min-height:90px;resize:vertical}.rsvp-form .btn{margin-top:20px}.form-help{font-size:11px;line-height:1.7;color:#d9c9b5;margin-top:15px}.footer{padding:30px 22px;text-align:center;background:#2c1e1a;color:#d6c5af}.footer .brand{font-size:22px}.footer p{font-size:10px;letter-spacing:.12em}
+.music-toggle{position:fixed;right:18px;bottom:18px;z-index:30;border:1px solid var(--gold);border-radius:50px;background:var(--paper);color:var(--ink);padding:12px 15px;font-size:10px;letter-spacing:.08em;box-shadow:0 4px 20px #39251c1a}.music-toggle span{color:var(--gold);margin-right:5px}
+.toast{position:fixed;left:50%;bottom:80px;transform:translateX(-50%);background:var(--paper);color:var(--ink);border:1px solid var(--gold);padding:13px 18px;font-size:12px;z-index:50;box-shadow:0 6px 25px #0002;display:none;max-width:90%;text-align:center}
+@media(max-width:900px){.hero{grid-template-columns:1fr 1fr;min-height:540px}.hero-copy{padding:70px 5vw}.hero-art{min-height:500px}.events-grid{grid-template-columns:repeat(2,1fr)}.event-img{height:220px}.story{gap:32px}.navlinks{gap:13px}}
+@media(max-width:650px){.nav{padding:12px 17px}.brand{font-size:22px}.menu{display:block}.navlinks{display:none;position:absolute;top:58px;left:0;right:0;background:var(--paper);padding:20px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}.navlinks.open{display:flex}.hero{display:flex;flex-direction:column-reverse;min-height:0}.hero-art{min-height:340px;height:52vh;max-height:460px}.hero-copy{padding:54px 28px 65px}.hero h1{font-size:76px;margin:22px 0}.hero-copy .ornament{display:none}section{padding:64px 18px}.count-wrap{gap:20px}.count-label{width:100%;text-align:center;max-width:none}.count-unit strong{font-size:34px}.events-grid{grid-template-columns:1fr 1fr;gap:10px}.event-img{height:155px}.event-content{padding:17px 13px}.event-card h3{font-size:24px}.event-date{font-size:26px}.event-venue{font-size:10px}.story{grid-template-columns:1fr;gap:30px}.story-image{height:340px}.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:160px 160px 140px}.gallery-grid img:first-child{grid-row:span 2}.gallery-grid img:last-child{grid-column:span 2}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.music-toggle{right:12px;bottom:12px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <nav class="nav" aria-label="Main navigation">
+    <a class="brand" href="#home" style="text-decoration:none">T <span style="font-size:15px;color:var(--muted)">&</span> S<small>THE WEDDING</small></a>
+    <button class="menu" id="menuBtn" aria-expanded="false" aria-label="Open menu">☰</button>
+    <div class="navlinks" id="navlinks">
+      <a href="#home">Home</a><a href="#events">Celebrations</a><a href="#story">Our Story</a><a href="#venues">Venues</a><a href="#rsvp">RSVP</a>
+    </div>
+  </nav>
+</header>
+<main>
+<section class="hero" id="home" style="padding:0">
+  <div class="hero-copy">
+    <div class="ornament"></div>
+    <div class="eyebrow">Together with our families</div>
+    <h1>Tanya <span>&</span> Saatvik</h1>
+    <p>With full hearts and great joy, we invite you to be part of our beginning — four beautiful celebrations, one forever.</p>
+    <div class="hero-date">29 NOVEMBER — 02 DECEMBER 2026</div>
+    <div class="hero-actions"><a class="btn" href="#events">Explore celebrations</a><a class="btn outline" href="#rsvp">Kindly RSVP</a></div>
+  </div>
+  <div class="hero-art">
+    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1400&q=85" alt="Romantic wedding celebration with warm, elegant styling">
+    <div class="art-caption">A celebration of love · family · forever</div>
+  </div>
+</section>
+<div class="countdown" aria-label="Countdown to the wedding">
+  <div class="count-wrap">
+    <div class="count-label">Counting down to our forever</div>
+    <div class="count-unit"><strong id="days">—</strong><span>Days</span></div>
+    <div class="count-unit"><strong id="hours">—</strong><span>Hours</span></div>
+    <div class="count-unit"><strong id="minutes">—</strong><span>Minutes</span></div>
+    <div class="count-unit"><strong id="seconds">—</strong><span>Seconds</span></div>
+  </div>
+</div>
+<section class="events" id="events">
+  <div class="section-inner">
+    <div class="center"><div class="section-kicker">Save the dates</div><h2 class="section-title">Our Wedding Celebrations</h2><p class="section-intro">Each gathering holds a special place in our story. We can’t wait to celebrate these moments with you.</p></div>
+    <div class="events-grid">
+      <article class="event-card">
+        <div class="event-img"><img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=700&q=80" alt="Warm traditional wedding lights and floral decor" loading="lazy"></div>
+        <div class="event-content"><div class="event-date">29 <small>Sunday · November 2026</small></div><h3>Mata Ki Chowki</h3><p class="event-note">An evening of devotion, blessings and togetherness.</p><div class="event-venue"><strong>⌖ Gracious, Naraina</strong>Ground Floor</div></div>
+      </article>
+      <article class="event-card">
+        <div class="event-img"><img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=700&q=80" alt="Elegant floral celebration setting" loading="lazy"></div>
+        <div class="event-content"><div class="event-date">30 <small>Monday · November 2026</small></div><h3>Mehendi & Cocktail</h3><p class="event-note">Colourful traditions meet a night of celebration.</p><div class="event-venue"><strong>⌖ Aroha, Naraina</strong>1st Floor</div></div>
+      </article>
+      <article class="event-card">
+        <div class="event-img"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=700&q=80" alt="Golden wedding celebration decor" loading="lazy"></div>
+        <div class="event-content"><div class="event-date">02 <small>Wednesday · December 2026</small></div><h3>Haldi & Choora Ceremony</h3><p class="event-note">Sunshine, marigolds and cherished family rituals.</p><div class="event-venue"><strong>⌖ Gracious, Naraina</strong>1st Floor</div></div>
+      </article>
+      <article class="event-card">
+        <div class="event-img"><img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?auto=format&fit=crop&w=700&q=80" alt="Romantic wedding ceremony floral arrangements" loading="lazy"></div>
+        <div class="event-content"><div class="event-date">02 <small>Wednesday · December 2026</small></div><h3>Wedding Ceremony</h3><p class="event-note">The beginning of our next chapter, surrounded by love.</p><div class="event-venue"><strong>⌖ Gracious, Naraina</strong>1st Floor</div></div>
+      </article>
+    </div>
+  </div>
+</section>
+<section id="story">
+  <div class="section-inner story">
+    <div class="story-image"><img src="https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=1000&q=85" alt="Romantic couple sharing a special moment" loading="lazy"></div>
+    <div class="story-copy"><div class="monogram">T<span style="font-size:20px">&</span>S</div><div class="section-kicker">A little about us</div><h2 class="section-title">Our story is still unfolding.</h2><p>Some of life’s most beautiful moments are the ones we get to share. As we bring our families and favourite people together, we’re grateful to have you beside us for the memories we’ll carry into forever.</p><p>We look forward to celebrating love, laughter, traditions and a new beginning with you.</p><a href="#rsvp" class="btn">Celebrate with us</a></div>
+  </div>
+</section>
+<section class="gallery" aria-label="Wedding inspiration gallery">
+  <div class="section-inner center"><div class="section-kicker">The feeling of forever</div><h2 class="section-title">Little moments, lasting memories</h2><p class="section-intro">A small moodboard for the celebrations to come. We’ll add your own photographs here when you’re ready.</p>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=900&q=80" alt="Bride and groom wedding portrait" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=600&q=80" alt="Wedding table floral styling" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80" alt="Romantic wedding venue" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=900&q=80" alt="Wedding flowers and details" loading="lazy">
+    </div>
+  </div>
+</section>
+<section id="venues">
+  <div class="section-inner center"><div class="section-kicker">Join us</div><h2 class="section-title">Where to celebrate</h2><p class="section-intro">We’ll be gathering at the venues below. Please check the floor for your event before arriving.</p>
+    <div class="events-grid" style="margin-top:34px">
+      <article class="event-card"><div class="event-content"><div class="section-kicker">29 November</div><h3>Gracious, Naraina</h3><div class="event-venue"><strong>Mata Ki Chowki</strong>Ground Floor</div></div></article>
+      <article class="event-card"><div class="event-content"><div class="section-kicker">30 November</div><h3>Aroha, Naraina</h3><div class="event-venue"><strong>Mehendi & Cocktail</strong>1st Floor</div></div></article>
+      <article class="event-card"><div class="event-content"><div class="section-kicker">2 December</div><h3>Gracious, Naraina</h3><div class="event-venue"><strong>Haldi & Choora</strong>1st Floor</div></div></article>
+      <article class="event-card"><div class="event-content"><div class="section-kicker">2 December</div><h3>Gracious, Naraina</h3><div class="event-venue"><strong>Wedding Ceremony</strong>1st Floor</div></div></article>
+    </div>
+    <p class="section-intro" style="margin-top:20px;font-size:11px">Exact street addresses and event timings will be added once confirmed.</p>
+  </div>
+</section>
+<section class="rsvp" id="rsvp">
+  <div class="section-inner center"><div class="section-kicker">We hope you can join us</div><h2 class="section-title">Kindly RSVP</h2><p class="section-intro">Your presence would mean the world to us. Please share your response below.</p>
+    <form class="rsvp-form" id="rsvpForm">
+      <div class="form-grid">
+        <div class="field"><label for="guestName">Your name *</label><input id="guestName" name="guestName" required placeholder="Full name"></div>
+        <div class="field"><label for="guestEmail">Email or phone</label><input id="guestEmail" name="guestEmail" placeholder="How we can reach you"></div>
+        <div class="field"><label for="attendance">Will you join us? *</label><select id="attendance" name="attendance" required><option value="">Choose response</option><option>Joyfully accepts</option><option>Regretfully declines</option><option>Not sure yet</option></select></div>
+        <div class="field"><label for="guestCount">Number of guests</label><select id="guestCount" name="guestCount"><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option></select></div>
+        <div class="field full"><label for="functions">Which celebrations?</label><select id="functions" name="functions"><option>All four celebrations</option><option>Mata Ki Chowki — 29 November</option><option>Mehendi & Cocktail — 30 November</option><option>Haldi & Choora — 2 December</option><option>Wedding Ceremony — 2 December</option><option>Multiple celebrations (mention below)</option></select></div>
+        <div class="field full"><label for="message">A note for the couple (optional)</label><textarea id="message" name="message" placeholder="Leave us a little note…"></textarea></div>
+      </div>
+      <button class="btn" type="submit">Prepare my RSVP</button>
+      <p class="form-help">This free static website does not send or store responses online by itself. Submitting prepares a message you can copy or send. Connect a form service before publishing if you want responses collected automatically.</p>
+    </form>
+  </div>
+</section>
+</main>
+<footer class="footer"><div class="brand">T <span style="font-size:14px">&</span> S</div><p>WITH LOVE, TANYA & SAATVIK · NOVEMBER–DECEMBER 2026</p></footer>
+<button class="music-toggle" id="musicToggle" type="button" aria-pressed="false"><span>♫</span> Turn on ambience</button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const weddingDate = new Date('2026-12-02T19:00:00+05:30'); // Countdown date only; event time is not displayed as an event time.
+function tick(){
+ const now = new Date(); let diff = Math.max(0, weddingDate-now);
+ const d=Math.floor(diff/86400000); diff%=86400000; const h=Math.floor(diff/3600000); diff%=3600000; const m=Math.floor(diff/60000); const s=Math.floor((diff%60000)/1000);
+ document.getElementById('days').textContent=d;document.getElementById('hours').textContent=String(h).padStart(2,'0');document.getElementById('minutes').textContent=String(m).padStart(2,'0');document.getElementById('seconds').textContent=String(s).padStart(2,'0');
+}
+tick();setInterval(tick,1000);
+const menuBtn=document.getElementById('menuBtn'), navlinks=document.getElementById('navlinks');
+menuBtn.addEventListener('click',()=>{const open=navlinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));});
+navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navlinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')}));
+const toast=document.getElementById('toast');function showToast(msg){toast.textContent=msg;toast.style.display='block';setTimeout(()=>toast.style.display='none',6500)}
+document.getElementById('rsvpForm').addEventListener('submit',async e=>{
+ e.preventDefault();const f=new FormData(e.target);
+ const msg=`Tanya & Saatvik — Wedding RSVP\nName: ${f.get('guestName')}\nEmail/phone: ${f.get('guestEmail')||'Not provided'}\nResponse: ${f.get('attendance')}\nGuests: ${f.get('guestCount')}\nCelebrations: ${f.get('functions')}\nNote: ${f.get('message')||'None'}`;
+ try{await navigator.clipboard.writeText(msg);showToast('RSVP message copied. Send it to the couple using your preferred messaging app.')}
+ catch(err){const blob=new Blob([msg],{type:'text/plain'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='wedding-rsvp.txt';a.click();URL.revokeObjectURL(url);showToast('Your RSVP text has been downloaded as a file.')}
+});
+let audioCtx=null,osc=null,gain=null,ambienceOn=false;
+document.getElementById('musicToggle').addEventListener('click',async()=>{
+ const btn=document.getElementById('musicToggle');
+ if(!ambienceOn){
+  try{audioCtx=audioCtx||new (window.AudioContext||window.webkitAudioContext)();await audioCtx.resume();gain=audioCtx.createGain();gain.gain.value=.018;gain.connect(audioCtx.destination);osc=audioCtx.createOscillator();osc.type='sine';osc.frequency.value=220;osc.connect(gain);osc.start();ambienceOn=true;btn.innerHTML='<span>♫</span> Turn off ambience';btn.setAttribute('aria-pressed','true');showToast('Soft synthesized ambient tone is on.');}
+  catch(e){showToast('Audio is not available in this browser.');}
+ }else{if(osc){osc.stop();osc.disconnect();osc=null}if(gain){gain.disconnect();gain=null}ambienceOn=false;btn.innerHTML='<span>♫</span> Turn on ambience';btn.setAttribute('aria-pressed','false');}
+});
+</script>
+</body>
+</html>
