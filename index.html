@@ -17,6 +17,10 @@
 section{padding:82px 22px}.section-inner{max-width:1120px;margin:auto}.center{text-align:center}.section-kicker{font-size:10px;letter-spacing:.27em;text-transform:uppercase;color:var(--gold);font-weight:600}.section-title{font-size:clamp(38px,5vw,62px);font-weight:400;margin:12px 0 12px;line-height:1}.section-intro{max-width:570px;margin:0 auto;color:var(--muted);font-size:13px;line-height:1.8}
 .countdown{background:#eee2cf;border-block:1px solid var(--line);padding:34px 22px}.count-wrap{display:flex;justify-content:center;align-items:center;gap:clamp(18px,5vw,68px);flex-wrap:wrap}.count-label{text-transform:uppercase;letter-spacing:.2em;font-size:10px;color:var(--muted);max-width:140px;line-height:1.7}.count-unit{text-align:center;min-width:54px}.count-unit strong{font:400 40px "Cormorant Garamond",serif;color:var(--wine);display:block}.count-unit span{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
 .events{background:#fffdf8}.events-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:42px}.event-card{background:var(--paper);border:1px solid var(--line);display:flex;flex-direction:column;min-width:0}.event-img{height:190px;overflow:hidden;background:#e8d8c3}.event-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}.event-card:hover .event-img img{transform:scale(1.04)}.event-content{padding:22px 18px 20px;display:flex;flex-direction:column;flex:1}.event-date{font-size:29px;color:var(--gold);line-height:1.05}.event-date small{font:500 10px "DM Sans",sans-serif;letter-spacing:.16em;text-transform:uppercase;display:block;margin-top:5px;color:var(--muted)}.event-card h3{font-size:27px;font-weight:500;line-height:1.02;margin:20px 0 13px}.event-venue{font-size:11px;line-height:1.8;color:var(--muted);margin-top:auto}.event-venue strong{display:block;color:var(--ink);font-weight:600}.event-note{font-size:11px;color:var(--muted);line-height:1.7;margin:14px 0 0}.venue-icon{color:var(--gold);margin-right:5px}
+.venue-link{color:inherit;text-decoration:none;display:inline-block;border-bottom:1px solid transparent;transition:.2s}
+.venue-link:hover,.venue-link:focus{color:var(--gold);border-bottom-color:var(--gold);outline-offset:3px}
+.directions-label{display:inline-block;margin-top:6px;color:var(--gold);font-size:9px;letter-spacing:.12em;text-transform:uppercase}
+
 .story{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}.story-image{height:470px;position:relative;background:#dfcbb0}.story-image img{width:100%;height:100%;object-fit:cover}.story-image:after{content:"";position:absolute;inset:14px;border:1px solid #fff9}.story-copy .section-title{margin-bottom:22px}.story-copy p{font-size:13px;line-height:2;color:var(--muted)}.monogram{font-family:"Cormorant Garamond",serif;font-size:43px;color:var(--gold);border:1px solid var(--gold2);width:74px;height:74px;border-radius:50%;display:grid;place-items:center;margin-bottom:24px}
 .gallery{background:#eee2cf}.gallery-grid{display:grid;grid-template-columns:1.15fr .85fr .85fr;grid-template-rows:180px 180px;gap:12px;margin-top:36px}.gallery-grid img{width:100%;height:100%;object-fit:cover}.gallery-grid img:first-child{grid-row:span 2}
 .rsvp{background:#402b25;color:var(--paper);position:relative;overflow:hidden}.rsvp:before,.rsvp:after{content:"✦";position:absolute;font-size:180px;color:#d5b68113}.rsvp:before{top:-45px;left:5%}.rsvp:after{bottom:-80px;right:5%}.rsvp .section-kicker{color:var(--gold2)}.rsvp .section-intro{color:#d9c9b5}.rsvp-form{max-width:720px;margin:35px auto 0;position:relative;z-index:1}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{display:flex;flex-direction:column;gap:8px}.field.full{grid-column:1/-1}.field label{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#e5d5c1}.field input,.field select,.field textarea{background:#ffffff0b;border:1px solid #b89a78;color:white;padding:13px;outline:none;border-radius:0}.field select option{color:#34251d}.field textarea{min-height:90px;resize:vertical}.rsvp-form .btn{margin-top:20px}.form-help{font-size:11px;line-height:1.7;color:#d9c9b5;margin-top:15px}.footer{padding:30px 22px;text-align:center;background:#2c1e1a;color:#d6c5af}.footer .brand{font-size:22px}.footer p{font-size:10px;letter-spacing:.12em}
@@ -66,20 +70,20 @@ section{padding:82px 22px}.section-inner{max-width:1120px;margin:auto}.center{te
     <div class="center"><div class="section-kicker">Save the dates</div><h2 class="section-title">Our Wedding Celebrations</h2><p class="section-intro">Each gathering holds a special place in our story. We can’t wait to celebrate these moments with you.</p></div>
     <div class="events-grid">
       <article class="event-card">
-        <div class="event-img"><img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=700&q=80" alt="Warm traditional wedding lights and floral decor" loading="lazy"></div>
-        <div class="event-content"><div class="event-date">29 <small>Sunday · November 2026</small></div><h3>Mata Ki Chowki</h3><p class="event-note">An evening of devotion, blessings and togetherness.</p><div class="event-venue"><strong>⌖ Gracious, Naraina</strong>Ground Floor</div></div>
+        <div class="event-img"><img src="images/mata-ki-chowki.jpg" alt="Warm traditional wedding lights and floral decor" loading="lazy"></div>
+        <div class="event-content"><div class="event-date">29 <small>Sunday · November 2026</small></div><h3>Mata Ki Chowki</h3><p class="event-note">An evening of devotion, blessings and togetherness.</p><div class="event-venue"><strong><a class="venue-link" href="https://maps.app.goo.gl/Xun1zR3cgpmTDFJeA" target="_blank" rel="noopener noreferrer" aria-label="Get directions to Gracious Naraina in Google Maps">⌖ Gracious, Naraina <span class="directions-label">Get directions ↗</span></a></strong>Ground Floor</div></div>
       </article>
       <article class="event-card">
-        <div class="event-img"><img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=700&q=80" alt="Elegant floral celebration setting" loading="lazy"></div>
-        <div class="event-content"><div class="event-date">30 <small>Monday · November 2026</small></div><h3>Mehendi & Cocktail</h3><p class="event-note">Colourful traditions meet a night of celebration.</p><div class="event-venue"><strong>⌖ Aroha, Naraina</strong>1st Floor</div></div>
+        <div class="event-img"><img src="images/mehendi-cocktail.jpg" alt="Elegant floral celebration setting" loading="lazy"></div>
+        <div class="event-content"><div class="event-date">30 <small>Monday · November 2026</small></div><h3>Mehendi & Cocktail</h3><p class="event-note">Colourful traditions meet a night of celebration.</p><div class="event-venue"><strong><a class="venue-link" href="https://maps.app.goo.gl/Xun1zR3cgpmTDFJeA" target="_blank" rel="noopener noreferrer" aria-label="Get directions to Aroha Naraina in Google Maps">⌖ Aroha, Naraina <span class="directions-label">Get directions ↗</span></a></strong>1st Floor</div></div>
       </article>
       <article class="event-card">
-        <div class="event-img"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=700&q=80" alt="Golden wedding celebration decor" loading="lazy"></div>
+        <div class="event-img"><img src="images/haldi-choora.jpg" alt="Golden wedding celebration decor" loading="lazy"></div>
         <div class="event-content"><div class="event-date">02 <small>Wednesday · December 2026</small></div><h3>Haldi & Choora Ceremony</h3><p class="event-note">Sunshine, marigolds and cherished family rituals.</p><div class="event-venue"><strong>⌖ Aroha, Naraina</strong>1st Floor</div></div>
       </article>
       <article class="event-card">
-        <div class="event-img"><img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?auto=format&fit=crop&w=700&q=80" alt="Romantic wedding ceremony floral arrangements" loading="lazy"></div>
-        <div class="event-content"><div class="event-date">02 <small>Wednesday · December 2026</small></div><h3>Wedding Ceremony</h3><p class="event-note">The beginning of our next chapter, surrounded by love.</p><div class="event-venue"><strong>⌖ Gracious, Naraina</strong>1st Floor</div></div>
+        <div class="event-img"><img src="images/wedding-varmala.jpg" alt="Romantic wedding ceremony floral arrangements" loading="lazy"></div>
+        <div class="event-content"><div class="event-date">02 <small>Wednesday · December 2026</small></div><h3>Wedding Ceremony</h3><p class="event-note">The beginning of our next chapter, surrounded by love.</p><div class="event-venue"><strong><a class="venue-link" href="https://maps.app.goo.gl/Xun1zR3cgpmTDFJeA" target="_blank" rel="noopener noreferrer" aria-label="Get directions to Gracious Naraina in Google Maps">⌖ Gracious, Naraina <span class="directions-label">Get directions ↗</span></a></strong>1st Floor</div></div>
       </article>
     </div>
   </div>
@@ -103,10 +107,10 @@ section{padding:82px 22px}.section-inner{max-width:1120px;margin:auto}.center{te
 <section id="venues">
   <div class="section-inner center"><div class="section-kicker">Join us</div><h2 class="section-title">Where to celebrate</h2><p class="section-intro">We’ll be gathering at the venues below. Please check the floor for your event before arriving.</p>
     <div class="events-grid" style="margin-top:34px">
-      <article class="event-card"><div class="event-content"><div class="section-kicker">29 November</div><h3>Gracious, Naraina</h3><div class="event-venue"><strong>Mata Ki Chowki</strong>Ground Floor</div></div></article>
-      <article class="event-card"><div class="event-content"><div class="section-kicker">30 November</div><h3>Aroha, Naraina</h3><div class="event-venue"><strong>Mehendi & Cocktail</strong>1st Floor</div></div></article>
+      <article class="event-card"><div class="event-content"><div class="section-kicker">29 November</div><h3><a class="venue-link" href="https://maps.app.goo.gl/Xun1zR3cgpmTDFJeA" target="_blank" rel="noopener noreferrer">Gracious, Naraina ↗</a></h3><div class="event-venue"><strong>Mata Ki Chowki</strong>Ground Floor</div></div></article>
+      <article class="event-card"><div class="event-content"><div class="section-kicker">30 November</div><h3><a class="venue-link" href="https://maps.app.goo.gl/Xun1zR3cgpmTDFJeA" target="_blank" rel="noopener noreferrer">Aroha, Naraina ↗</a></h3><div class="event-venue"><strong>Mehendi & Cocktail</strong>1st Floor</div></div></article>
       <article class="event-card"><div class="event-content"><div class="section-kicker">2 December</div><h3>Aroha, Naraina</h3><div class="event-venue"><strong>Haldi & Choora</strong>1st Floor</div></div></article>
-      <article class="event-card"><div class="event-content"><div class="section-kicker">2 December</div><h3>Gracious, Naraina</h3><div class="event-venue"><strong>Wedding Ceremony</strong>1st Floor</div></div></article>
+      <article class="event-card"><div class="event-content"><div class="section-kicker">2 December</div><h3><a class="venue-link" href="https://maps.app.goo.gl/Xun1zR3cgpmTDFJeA" target="_blank" rel="noopener noreferrer">Gracious, Naraina ↗</a></h3><div class="event-venue"><strong>Wedding Ceremony</strong>1st Floor</div></div></article>
     </div>
     <p class="section-intro" style="margin-top:20px;font-size:11px">Exact street addresses and event timings will be added once confirmed.</p>
   </div>
@@ -123,7 +127,7 @@ section{padding:82px 22px}.section-inner{max-width:1120px;margin:auto}.center{te
         <div class="field full"><label for="message">A note for the couple (optional)</label><textarea id="message" name="message" placeholder="Leave us a little note…"></textarea></div>
       </div>
       <button class="btn" type="submit">Prepare my RSVP</button>
-      <p class="form-help">This free static website does not send or store responses online by itself. Submitting prepares a message you can copy or send. Connect a form service before publishing if you want responses collected automatically.</p>
+      <p class="form-help">Submitting opens your email app with your RSVP addressed to sugarfairypatisserie@gmail.com. Please press Send to confirm. If no email app is configured, the RSVP text is also copied when browser permissions allow.</p>
     </form>
   </div>
 </section>
@@ -146,8 +150,13 @@ const toast=document.getElementById('toast');function showToast(msg){toast.textC
 document.getElementById('rsvpForm').addEventListener('submit',async e=>{
  e.preventDefault();const f=new FormData(e.target);
  const msg=`Tanya & Saatvik — Wedding RSVP\nName: ${f.get('guestName')}\nEmail/phone: ${f.get('guestEmail')||'Not provided'}\nResponse: ${f.get('attendance')}\nGuests: ${f.get('guestCount')}\nCelebrations: ${f.get('functions')}\nNote: ${f.get('message')||'None'}`;
- try{await navigator.clipboard.writeText(msg);showToast('RSVP message copied. Send it to the couple using your preferred messaging app.')}
- catch(err){const blob=new Blob([msg],{type:'text/plain'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='wedding-rsvp.txt';a.click();URL.revokeObjectURL(url);showToast('Your RSVP text has been downloaded as a file.')}
+ const subject = encodeURIComponent('Wedding RSVP — Tanya & Saatvik');
+ const body = encodeURIComponent(msg);
+ const mailto = `mailto:sugarfairypatisserie@gmail.com?subject=${subject}&body=${body}`;
+ // Open the visitor's default email app with the RSVP details prefilled.
+ window.location.href = mailto;
+ showToast('Your email app should open with the RSVP addressed to sugarfairypatisserie@gmail.com. Please send it to confirm your response.');
+ try{await navigator.clipboard.writeText(msg)}catch(err){}
 });
 let audioCtx=null,osc=null,gain=null,ambienceOn=false;
 document.getElementById('musicToggle').addEventListener('click',async()=>{
