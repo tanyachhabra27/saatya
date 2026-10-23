@@ -118,10 +118,10 @@
      <span>Choose one or more images from your device</span>
      <input id="guestPhotos" name="guestPhotos" type="file" accept="image/*" multiple>
     </label>
-    <p class="smallprint" id="uploadStatus" aria-live="polite">Direct uploads are not active yet. Connect a real upload service to enable secure uploads.</p>
+    <p class="smallprint" id="uploadStatus" aria-live="polite">Choose your photos and upload them directly to our wedding photo collection.</p>
     <button class="btn" type="submit">Upload photos ♡</button>
    </form>
-   <p class="note">This first version does not transmit or store selected files. The upload button will explain what needs to be connected until a real upload service is configured.</p>
+   <p class="note">Photos are sent to our ImageKit-hosted wedding photo collection. Please upload only photos you are happy to share with the couple.</p>
   </div>
  </div>
 </section>
@@ -170,7 +170,77 @@ document.getElementById('attendance').addEventListener('change',e=>{document.get
 document.getElementById('rsvpForm').addEventListener('submit',e=>{e.preventDefault();const f=e.currentTarget;const data=new FormData(f);const funcs=data.getAll('function');const body=['Wedding RSVP — Tanya & Saatvik','Name: '+data.get('guestName'),'Response: '+data.get('attendance'),...(data.get('attendance')==='Joyfully accepts'?['Guests: '+data.get('guestCount'),'Functions: '+(funcs.join(', ')||'Not specified')]:[]),'Message: '+(data.get('message')||'—')].join('\n');const mail='mailto:sugarfairypatisserie@gmail.com?subject='+encodeURIComponent('Wedding RSVP — Tanya & Saatvik')+'&body='+encodeURIComponent(body);document.getElementById('rsvpStatus').textContent='Your email app should open. Please press Send to submit your RSVP.';window.location.href=mail;});
 
 const uploadForm=document.getElementById('photoUploadForm');
-if(uploadForm){uploadForm.addEventListener('submit',e=>{e.preventDefault();const input=document.getElementById('guestPhotos');const status=document.getElementById('uploadStatus');if(!input.files||input.files.length===0){status.textContent='Choose one or more image files first. No files have been uploaded.';return;}status.textContent='Upload is not connected yet. Your '+input.files.length+' selected file(s) have not been sent or saved. Connect a service such as Cloudinary, Uploadcare, or a custom backend and configure its credentials before enabling uploads.';});}
+if(uploadForm){
+  uploadForm.addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    const input=document.getElementById('guestPhotos');
+    const status=document.getElementById('uploadStatus');
+    const submitButton=uploadForm.querySelector('button[type="submit"]');
+    const files=Array.from(input.files || []);
+    const authEndpoint='https://super-bar-ba6csaatya-photo-upload.sugarfairypatisserie.workers.dev/auth';
+    const maxBytes=10*1024*1024;
+    if(!files.length){status.textContent='Please select one or more photos first.';return;}
+    const invalid=files.find(file=>!file.type.startsWith('image/') || file.size>maxBytes);
+    if(invalid){
+      status.textContent=invalid.size>maxBytes
+        ? 'Each photo must be 10 MB or smaller. Please remove “'+invalid.name+'” and try again.'
+        : 'Please select image files only.';
+      return;
+    }
+    submitButton.disabled=true;
+    status.textContent='Preparing secure upload…';
+    let uploaded=0;
+    const errors=[];
+    try{
+      for(const file of files){
+        try{
+          const authResponse=await fetch(authEndpoint,{method:'GET',mode:'cors',cache:'no-store'});
+          if(!authResponse.ok){
+            const message=await authResponse.text();
+            throw new Error('Authentication failed ('+authResponse.status+'): '+message);
+          }
+          const auth=await authResponse.json();
+          if(!auth.token || !auth.signature || !auth.expire || !auth.publicKey){
+            throw new Error('The upload service returned incomplete authentication details.');
+          }
+          const formData=new FormData();
+          formData.append('file',file,file.name);
+          formData.append('fileName',file.name);
+          formData.append('publicKey',auth.publicKey);
+          formData.append('token',auth.token);
+          formData.append('expire',String(auth.expire));
+          formData.append('signature',auth.signature);
+          formData.append('folder','/saatya-wedding-guest-uploads');
+          formData.append('useUniqueFileName','true');
+          const uploadResponse=await fetch('https://upload.imagekit.io/api/v1/files/upload',{
+            method:'POST',
+            body:formData
+          });
+          const result=await uploadResponse.json().catch(()=>({}));
+          if(!uploadResponse.ok){
+            throw new Error(result.message || 'ImageKit upload failed ('+uploadResponse.status+').');
+          }
+          uploaded++;
+          status.textContent='Uploaded '+uploaded+' of '+files.length+' photo(s)…';
+        }catch(err){
+          errors.push(file.name+': '+(err.message || 'upload failed'));
+        }
+      }
+      if(uploaded===files.length){
+        status.textContent='Success! All '+uploaded+' photo(s) were uploaded to the wedding collection. Thank you for sharing your memories ♡';
+        input.value='';
+      }else if(uploaded>0){
+        status.textContent=uploaded+' of '+files.length+' photo(s) uploaded. The remaining upload(s) failed: '+errors.join(' | ');
+      }else{
+        status.textContent='No photos were uploaded. '+errors.join(' | ');
+      }
+    }catch(err){
+      status.textContent='Upload could not start: '+(err.message || 'please try again later.');
+    }finally{
+      submitButton.disabled=false;
+    }
+  });
+}
 /* Optional sound is intentionally a gentle generated chime, not a copyrighted song. */
 let audioCtx=null,osc=null,gain=null;const musicBtn=document.getElementById('musicBtn');musicBtn.addEventListener('click',()=>{if(!audioCtx){const AC=window.AudioContext||window.webkitAudioContext;if(!AC){musicBtn.textContent='♫ Audio unavailable';return}audioCtx=new AC()}if(musicBtn.getAttribute('aria-pressed')==='true'){if(osc){try{osc.stop()}catch(e){}osc=null}musicBtn.setAttribute('aria-pressed','false');musicBtn.textContent='♫ Music: off';return}osc=audioCtx.createOscillator();gain=audioCtx.createGain();osc.type='sine';osc.frequency.value=523.25;gain.gain.value=.025;osc.connect(gain);gain.connect(audioCtx.destination);osc.start();musicBtn.setAttribute('aria-pressed','true');musicBtn.textContent='♫ Chime: on';setTimeout(()=>{if(osc){try{osc.stop()}catch(e){}osc=null}musicBtn.setAttribute('aria-pressed','false');musicBtn.textContent='♫ Music: off'},2200)});
 </script>
